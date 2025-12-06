@@ -23,7 +23,7 @@ spec:
             - name: SPRING_DATASOURCE_URL
               value: "jdbc:mysql://mysql-db:3306/seminar2025?useSSL=false&allowPublicKeyRetrieval=true"
             - name: MYSQL_USER
-              value: "user"
+              value: "root"
             - name: MYSQL_PASSWORD
               value: "somepassword"
 ---
