@@ -51,4 +51,14 @@ class JwtTokenProvider(
         }
         return false
     }
+
+    fun getExpiration(token: String): Date {
+        return Jwts
+            .parserBuilder()
+            .setSigningKey(key)
+            .build()
+            .parseClaimsJws(token)
+            .body
+            .expiration
+    }
 }

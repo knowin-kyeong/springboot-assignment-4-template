@@ -16,11 +16,14 @@ import org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPat
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers.status
 import org.testcontainers.junit.jupiter.Testcontainers
 import java.util.concurrent.Executors
+import com.wafflestudio.spring2025.helper.mock.MockRedis
+import org.springframework.test.context.ContextConfiguration
 
 @SpringBootTest
 @ActiveProfiles("test")
 @Testcontainers
 @AutoConfigureMockMvc
+@ContextConfiguration(initializers = [MockRedis::class])
 class PostLikeIntegrationTest
     @Autowired
     constructor(
