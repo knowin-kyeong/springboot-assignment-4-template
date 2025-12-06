@@ -52,13 +52,12 @@ class JwtTokenProvider(
         return false
     }
 
-    fun getExpiration(token: String): Date {
-        return Jwts
+    fun getExpiration(token: String): Date =
+        Jwts
             .parserBuilder()
             .setSigningKey(key)
             .build()
             .parseClaimsJws(token)
             .body
             .expiration
-    }
 }
